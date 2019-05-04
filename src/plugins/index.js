@@ -1,6 +1,6 @@
 import Vue from 'vue'
 
-import Message from '../components/message/message'
+import Message from './message'
 
 const install = () => {
   Vue.prototype.$message = Message

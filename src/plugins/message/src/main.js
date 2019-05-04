@@ -1,9 +1,19 @@
+/*
+    @param message string        文字
+    @param duration number 2000  显示时间，0时不自动关闭
+*/
+
 import Vue from 'vue';
-import messageComponent from '../../../components/message/message';
+import messageComponent from './main.vue';
 
 let $vm = null
 
 const MessagePlugin = (options = {}) =>  {
+  if (typeof options === 'string') {
+    options = {
+      message: options
+    }
+  }
   if(!$vm) {
     const Message = Vue.extend(messageComponent)
 
@@ -14,10 +24,8 @@ const MessagePlugin = (options = {}) =>  {
     document.body.appendChild($vm.$el)
   }
 
-  if (typeof options === 'string') {
-    options.message = options
-  }
-
+  $vm.setState(true)
 }
+
 
 export default MessagePlugin

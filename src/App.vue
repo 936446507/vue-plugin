@@ -11,7 +11,7 @@ export default {
     }
   },
   mounted() {
-    console.log(this.$message)
+    this.$message('message')
   }
 }
 </script>
