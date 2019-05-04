@@ -3,7 +3,7 @@ import messageComponent from '../../../components/message/message';
 
 let $vm = null
 
-const MessagePlugin = (options) =>  {
+const MessagePlugin = (options = {}) =>  {
   if(!$vm) {
     const Message = Vue.extend(messageComponent)
 
@@ -12,6 +12,10 @@ const MessagePlugin = (options) =>  {
       data: options
     })
     document.body.appendChild($vm.$el)
+  }
+
+  if (typeof options === 'string') {
+    options.message = options
   }
 
 }
