@@ -1,19 +1,21 @@
 <template>
   <div id="app">
+    <div class="loading" v-loading="loading"></div>
   </div>
 </template>
 
 <script>
 export default {
   name: 'app',
-  data () {
+  data() {
     return {
-    }
+      loading: true
+    };
   },
   mounted() {
-    this.$message('message')
+    this.$message('message');
   }
-}
+};
 </script>
 
 <style lang="scss">
@@ -24,5 +26,10 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.loading {
+  width: 500px;
+  height: 500px;
+  background: red;
 }
 </style>
