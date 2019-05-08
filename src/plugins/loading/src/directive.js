@@ -42,10 +42,12 @@ loadingDirective.install = Vue => {
   Vue.directive('loading', {
     bind(el, binding, vnode) {
       const text = el.getAttribute('element-loading-text')
+      const background = el.getAttribute('element-loading-background')
       $vm = new Mask({
         el: document.createElement('div'),
         data: {
           text,
+          background,
           fullscreen: !!binding.modifiers.fullscreen
         }
       })
@@ -65,7 +67,7 @@ loadingDirective.install = Vue => {
         $vm.$el.parentNode.removeChild($vm.$el)
         toggleLoading(el, {value: false, modifiers: binding.modifiers})
       }
-      $vm && $vm.$destory()
+      $vm && $vm.$destroy()
     }
   })
 }

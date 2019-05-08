@@ -1,6 +1,11 @@
 <template>
   <div id="app">
-    <div class="loading" v-loading="loading" element-loading-text="loading"></div>
+    <div
+      class="loading"
+      v-loading="loading"
+      element-loading-text="loading"
+      element-loading-background="rgba(0, 0, 0, .5)"
+    ></div>
   </div>
 </template>
 
