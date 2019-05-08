@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div class="loading" v-loading="loading"></div>
+    <div class="loading" v-loading="loading" element-loading-text="loading"></div>
   </div>
 </template>
 
@@ -14,6 +14,9 @@ export default {
   },
   mounted() {
     this.$message('message');
+    setTimeout(() => {
+      this.loading = false;
+    }, 2000);
   }
 };
 </script>
